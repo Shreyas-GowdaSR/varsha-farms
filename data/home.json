@@ -1,14 +1,34 @@
 {
   "hero": {
-    "type": "video",
-    "src": "media/home/farm-video.mp4",
-    "poster": "media/home/farm-video-poster.webp"
+    "type": "image",
+    "src": "media/home/ewe-golden-field.webp",
+    "thumb": "media/home/ewe-golden-field-sm.webp"
   },
   "gallery": [
-    { "type": "image", "src": "media/home/ewe-golden-field.webp", "thumb": "media/home/ewe-golden-field-sm.webp" },
-    { "type": "image", "src": "media/home/ram-horns.webp", "thumb": "media/home/ram-horns-sm.webp" },
-    { "type": "image", "src": "media/home/flock-clouds.webp", "thumb": "media/home/flock-clouds-sm.webp" },
-    { "type": "image", "src": "media/home/ram-hill.webp", "thumb": "media/home/ram-hill-sm.webp" },
-    { "type": "video", "src": "media/home/farm-video.mp4", "poster": "media/home/farm-video-poster.webp" }
+    {
+      "type": "image",
+      "src": "media/home/flock-clouds.webp",
+      "thumb": "media/home/flock-clouds-sm.webp"
+    },
+    {
+      "type": "image",
+      "src": "media/home/ram-horns.webp",
+      "thumb": "media/home/ram-horns-sm.webp"
+    },
+    {
+      "type": "image",
+      "src": "media/home/ram-hill.webp",
+      "thumb": "media/home/ram-hill-sm.webp"
+    },
+    {
+      "type": "image",
+      "src": "media/home/ewe-golden-field.webp",
+      "thumb": "media/home/ewe-golden-field-sm.webp"
+    },
+    {
+      "type": "video",
+      "src": "media/home/farm-video.mp4",
+      "poster": "media/home/farm-video-poster.webp"
+    }
   ]
 }

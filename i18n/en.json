@@ -4,7 +4,6 @@
   "meta.about": "About — Varsha Farms",
   "meta.contact": "Contact — Varsha Farms",
   "meta.owner": "Owner — Varsha Farms",
-
   "skip": "Skip to content",
   "brand.name": "Varsha Farms",
   "nav.home": "Home",
@@ -12,16 +11,13 @@
   "nav.about": "About",
   "nav.contact": "Contact",
   "lang.label": "Language",
-
   "cta.call": "Call",
   "cta.whatsapp": "WhatsApp",
   "cta.directions": "Get directions",
-
   "footer.note": "Shed-raised Amingad (Yelaga) sheep",
   "footer.owner": "Owner: Raju S T",
   "footer.place": "Sontenahalli, near Bengaluru, Karnataka",
   "footer.ownerLogin": "Owner login",
-
   "home.kicker": "Sontenahalli · near Bengaluru",
   "home.tagline": "Amingad sheep, raised in our sheds.",
   "home.lead": "We raise Amingad (Yelaga) sheep in clean sheds, fed on time and watched every day. Visit the farm, see each sheep, and pick the one you want.",
@@ -36,14 +32,12 @@
   "home.why3": "Every sheep is listed with its weight and price, so you know before you visit.",
   "home.visitTitle": "Come see the sheep",
   "home.visitText": "Sontenahalli, near Bengaluru. Please call or WhatsApp before you visit.",
-
   "media.pause": "Pause video",
   "media.play": "Play video",
   "media.close": "Close",
   "media.photo": "Farm photo",
   "media.video": "Farm video",
   "media.noPhoto": "Photo coming soon",
-
   "explore.title": "Our sheep",
   "explore.lead": "Every sheep has a tag number. Mention the number when you call or WhatsApp.",
   "explore.count": "{n} sheep",
@@ -58,7 +52,6 @@
   "sort.priceLow": "Price: low to high",
   "sort.priceHigh": "Price: high to low",
   "sort.weight": "Heaviest first",
-
   "f.id": "Tag",
   "f.breed": "Breed",
   "f.gender": "Gender",
@@ -71,7 +64,6 @@
   "f.note": "Note",
   "f.status": "Status",
   "na": "NA",
-
   "gender.ram": "Ram (male)",
   "gender.ewe": "Ewe (female)",
   "breed.amingad": "Amingad (Yelaga)",
@@ -92,10 +84,8 @@
   "status.booked": "Booked",
   "status.sold": "Sold",
   "card.photos": "Photos of sheep {id}",
-
   "wa.sheep": "Hello Raju, I saw sheep {id} on the Varsha Farms website (weight {weight}, price {price}). Is it still available?",
   "wa.general": "Hello Raju, I found Varsha Farms on the website. Which sheep are available now?",
-
   "about.title": "About the farm",
   "about.p1": "Varsha Farms is a family sheep farm in Sontenahalli, near Bengaluru, run by Raju S T.",
   "about.name": "Varsha means rain — the season every farmer waits for.",
@@ -106,7 +96,6 @@
   "about.visitTitle": "See before you buy",
   "about.p4": "You are welcome to come and see the sheep, and to watch them being weighed. Call or WhatsApp Raju to fix a time.",
   "about.ownerRole": "Owner, Varsha Farms",
-
   "contact.title": "Call, WhatsApp or visit",
   "contact.lead": "Raju answers calls and WhatsApp messages. Please call before visiting the farm.",
   "contact.primary": "Main number",
@@ -116,7 +105,6 @@
   "contact.openMap": "Open in Google Maps",
   "contact.mapTitle": "Map to Varsha Farms",
   "contact.loadMap": "Show map",
-
   "o.title": "Owner page",
   "o.password": "Password",
   "o.login": "Open",
@@ -172,5 +160,19 @@
   "o.changePassword": "Change password",
   "o.passwordChanged": "Password changed.",
   "o.where": "Changes are saved to: {where}",
-  "o.photoCount": "{n} photos"
+  "o.photoCount": "{n} photos",
+  "brand.sub": "Sontenahalli",
+  "nav.menu": "Menu",
+  "nav.close": "Close",
+  "home.heroLead": "A family farm devoted to one native breed — fed on time, kept clean, and ready to be seen before you choose.",
+  "home.introEyebrow": "Welcome to Varsha Farms",
+  "home.introTitle": "A family farm, a single native breed, and sheep you can see before you buy.",
+  "home.aboutLink": "Our story",
+  "home.flockEyebrow": "The flock",
+  "home.featureEyebrow": "In the shed",
+  "home.featureTitle": "Raised in sheds, not open fields",
+  "home.galleryEyebrow": "Gallery",
+  "home.visitEyebrow": "Visit",
+  "footer.callTitle": "Call or WhatsApp",
+  "footer.farmTitle": "The farm"
 }
