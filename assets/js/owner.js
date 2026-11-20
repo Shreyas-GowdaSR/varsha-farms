@@ -1,4 +1,4 @@
-/* Varsha Farms — owner page.
+/* Varsha Aries — owner page.
  * Two ways to save, picked automatically:
  *  - "server": the site is served by server.js (Node). Files are written to disk. Password = OWNER_PASSWORD.
  *  - "github": the site is static (GitHub Pages / Netlify / Cloudflare Pages). Changes are committed to the

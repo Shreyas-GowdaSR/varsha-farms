@@ -1,4 +1,4 @@
-/* Varsha Farms — public pages. Plain JS, no dependencies. */
+/* Varsha Aries — public pages. Plain JS, no dependencies. */
 (function () {
   'use strict';
 

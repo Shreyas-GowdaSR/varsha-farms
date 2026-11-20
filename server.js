@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Varsha Farms — tiny optional server (no dependencies, Node 18+).
+ * Varsha Aries — tiny optional server (no dependencies, Node 18+).
  *
  *   node server.js                      # local preview on http://localhost:8080 (owner page works without password, localhost only)
  *   OWNER_PASSWORD=secret node server.js  # production on a VPS / any Node host with a persistent disk
@@ -124,5 +124,5 @@ http.createServer((req, res) => {
   if (rel === '') rel = 'index.html';
   serveFile(req, res, rel);
 }).listen(PORT, () => {
-  console.log(`Varsha Farms on http://localhost:${PORT}` + (PASSWORD ? ' (owner password set)' : ' (owner page: localhost only, no password)'));
+  console.log(`Varsha Aries on http://localhost:${PORT}` + (PASSWORD ? ' (owner password set)' : ' (owner page: localhost only, no password)'));
 });
