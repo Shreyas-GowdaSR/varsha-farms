@@ -174,5 +174,9 @@
   "home.galleryEyebrow": "Gallery",
   "home.visitEyebrow": "Visit",
   "footer.callTitle": "Call or WhatsApp",
-  "footer.farmTitle": "The farm"
+  "footer.farmTitle": "The farm",
+  "o.youtube": "YouTube link",
+  "o.addLink": "Add link",
+  "o.badLink": "That doesn't look like a YouTube link. Copy it from the Share button on YouTube.",
+  "media.playYt": "Play video"
 }

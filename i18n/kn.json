@@ -174,5 +174,9 @@
   "home.galleryEyebrow": "ಗ್ಯಾಲರಿ",
   "home.visitEyebrow": "ಭೇಟಿ",
   "footer.callTitle": "ಕರೆ ಅಥವಾ ವಾಟ್ಸಾಪ್",
-  "footer.farmTitle": "ಫಾರ್ಮ್"
+  "footer.farmTitle": "ಫಾರ್ಮ್",
+  "o.youtube": "YouTube ಲಿಂಕ್",
+  "o.addLink": "ಲಿಂಕ್ ಸೇರಿಸಿ",
+  "o.badLink": "ಇದು YouTube ಲಿಂಕ್‌ನಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. YouTube ನಲ್ಲಿ Share ಬಟನ್‌ನಿಂದ ಲಿಂಕ್ ಕಾಪಿ ಮಾಡಿ.",
+  "media.playYt": "ವೀಡಿಯೊ ಪ್ಲೇ ಮಾಡಿ"
 }

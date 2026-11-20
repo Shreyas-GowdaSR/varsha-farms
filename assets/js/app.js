@@ -140,7 +140,20 @@
   }
 
   /* ---------- sheep card ---------- */
+  // YouTube: show only the thumbnail; load the player when tapped (keeps pages light on 4G).
+  function ytEmbed(id) {
+    return el('iframe', { src: 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1', title: 'YouTube video',
+      allow: 'autoplay; encrypted-media; picture-in-picture; fullscreen', allowfullscreen: '' });
+  }
+  function ytFacade(m) {
+    var b = el('button', { type: 'button', class: 'yt', 'aria-label': t('media.playYt') }, [
+      el('img', { src: m.poster, alt: '', loading: 'lazy', decoding: 'async' }), el('span', { class: 'yt-play', 'aria-hidden': 'true' })
+    ]);
+    b.addEventListener('click', function () { b.replaceWith(ytEmbed(m.id)); });
+    return b;
+  }
   function mediaNode(m, alt, eager) {
+    if (m.type === 'youtube') return ytFacade(m);
     if (m.type === 'video') {
       return el('video', { src: m.src, poster: m.poster || null, controls: '', preload: 'none', playsinline: '', muted: '' });
     }
@@ -226,7 +239,7 @@
     var close = el('button', { class: 'btn close', type: 'button', text: t('media.close') });
     close.addEventListener('click', function () { d.close(); });
     d.appendChild(close);
-    d.appendChild(item.type === 'video'
+    d.appendChild(item.type === 'youtube' ? el('div', { class: 'yt-frame' }, [ytEmbed(item.id)]) : item.type === 'video'
       ? el('video', { src: item.src, poster: item.poster || null, controls: '', autoplay: '', playsinline: '' })
       : el('img', { src: item.src, alt: t('media.photo') }));
     if (d.showModal) d.showModal(); else window.open(item.src, '_blank');
@@ -304,8 +317,8 @@
     var fv = featureVideo();
     g.innerHTML = '';
     (homeData.gallery || []).filter(function (m) { return m !== fv; }).forEach(function (m) {
-      var b = el('button', { type: 'button', class: m.type === 'video' ? 'is-video' : '', 'aria-label': t(m.type === 'video' ? 'media.video' : 'media.photo') });
-      b.appendChild(el('img', { src: m.type === 'video' ? m.poster : (m.thumb || m.src), alt: '', loading: 'lazy', decoding: 'async' }));
+      var b = el('button', { type: 'button', class: m.type === 'image' ? '' : 'is-video', 'aria-label': t(m.type === 'image' ? 'media.photo' : 'media.video') });
+      b.appendChild(el('img', { src: m.type === 'image' ? (m.thumb || m.src) : m.poster, alt: '', loading: 'lazy', decoding: 'async' }));
       b.addEventListener('click', function () { openViewer(m); });
       g.appendChild(b);
     });

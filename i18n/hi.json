@@ -174,5 +174,9 @@
   "home.galleryEyebrow": "गैलरी",
   "home.visitEyebrow": "मिलने आइए",
   "footer.callTitle": "कॉल या व्हाट्सऐप",
-  "footer.farmTitle": "फार्म"
+  "footer.farmTitle": "फार्म",
+  "o.youtube": "YouTube लिंक",
+  "o.addLink": "लिंक जोड़ें",
+  "o.badLink": "यह YouTube लिंक नहीं लगता। YouTube में Share बटन से लिंक कॉपी करें।",
+  "media.playYt": "वीडियो चलाएँ"
 }
