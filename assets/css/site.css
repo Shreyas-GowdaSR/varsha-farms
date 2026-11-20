@@ -365,3 +365,60 @@ dialog.viewer .close { display: block; margin: 0 0 10px auto; color: #fff; borde
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .fc-img img, .gallery img { transition: none; }
 }
+
+/* ---------- Phone alignment fixes ---------- */
+/* Never let decoration widen the page (caused sideways drift on phones). */
+html, body { overflow-x: hidden; }
+@supports (overflow-x: clip) { html, body { overflow-x: clip; } }
+.section, .page-head, .hero, .feature, .visit, .site-foot { overflow-x: clip; }
+/* Even line breaks: no single word left alone on a line. */
+h1, h2, h3, .page-head p, .hero-lead, .statement, .quote { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+@media (max-width: 899px) {
+  .script-deco { max-width: 100%; overflow: hidden; }
+  .intro-grid .script-deco { right: 0; }
+}
+
+@media (max-width: 640px) {
+  /* Button pairs: two equal halves. Hero buttons: full width, stacked. */
+  .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-row .btn { width: 100%; min-width: 0; padding: 14px 10px; letter-spacing: .14em; }
+  :lang(kn) .btn-row .btn, :lang(hi) .btn-row .btn { letter-spacing: .02em; }
+  .hero .btn-row { grid-template-columns: 1fr; }
+  .phone-card .btn-row .btn { flex: none; }
+  .sc-actions .btn { padding: 12px 8px; letter-spacing: .14em; }
+
+  /* Hero small heading on one line, dash kept short. */
+  .eyebrow { gap: 10px; letter-spacing: .2em; font-size: .66rem; }
+  .eyebrow::before, .center .eyebrow::after, .page-head .eyebrow::after { width: 22px; flex-shrink: 0; }
+  .hero-content { padding-bottom: 64px; }
+  .hero h1 { font-size: clamp(2.3rem, 11vw, 3rem); }
+
+  /* Numbered list: narrow number column. */
+  .why li { grid-template-columns: 34px 1fr; gap: 10px; }
+
+  /* Gallery: last photo fills the row instead of leaving a gap. */
+  .gallery button:last-child:nth-child(even) { grid-column: span 2; }
+
+  /* Page headers and sections a touch tighter. */
+  .page-head { padding: 56px 0 40px; }
+  .section { padding: 72px 0; }
+  .section-tight { padding-top: 0; }
+  .section-head { margin-bottom: 28px; }
+  .phone-card .num { font-size: 2.1rem; }
+  .foot-cols { gap: 28px; }
+}
+
+/* Kannada & Hindi: wide letter-spacing breaks joined letters — keep it tight everywhere. */
+:lang(kn) .brand-sub, :lang(hi) .brand-sub,
+:lang(kn) .fc-id, :lang(hi) .fc-id,
+:lang(kn) .sc-id, :lang(hi) .sc-id,
+:lang(kn) .menu-btn, :lang(hi) .menu-btn,
+:lang(kn) .nav-close, :lang(hi) .nav-close,
+:lang(kn) .media-toggle, :lang(hi) .media-toggle,
+:lang(kn) .eyebrow, :lang(hi) .eyebrow { letter-spacing: .02em; text-transform: none; }
+:lang(kn) .brand-sub, :lang(hi) .brand-sub { font-size: .72rem; margin-top: 5px; }
+:lang(kn) .fc-id, :lang(hi) .fc-id, :lang(kn) .sc-id, :lang(hi) .sc-id { font-size: .85rem; }
+@media (max-width: 640px) { :lang(kn) .eyebrow, :lang(hi) .eyebrow { font-size: .85rem; } }
+:lang(kn) .sc-actions .btn, :lang(hi) .sc-actions .btn, :lang(kn) .callbar a, :lang(hi) .callbar a { letter-spacing: .02em; }
