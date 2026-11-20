@@ -88,7 +88,11 @@ p { margin: 0 0 1.1em; }
 .site-head { position: relative; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--line); color: var(--ink); }
 .site-head.is-overlay { position: absolute; top: 0; left: 0; right: 0; background: transparent; border-bottom-color: var(--line-light); color: #fff; }
 .head-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
-.brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+.brand { text-decoration: none; display: flex; align-items: center; gap: 12px; line-height: 1; min-width: 0; }
+.brand-logo { width: 46px; height: 46px; flex-shrink: 0; border-radius: 50%; }
+.brand-text { display: flex; flex-direction: column; min-width: 0; }
+@media (max-width: 520px) { .brand { gap: 9px; } .brand-logo { width: 40px; height: 40px; } .brand-name { font-size: 1.05rem !important; letter-spacing: .1em !important; } .brand-sub { font-size: .52rem; letter-spacing: .3em; } .head-tools { gap: 8px; } .lang button { padding: 8px 5px; } }
+@media (min-width: 900px) { .brand-logo { width: 56px; height: 56px; } }
 .brand-name { font-family: "Cormorant Garamond", serif; font-size: 1.55rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; white-space: nowrap; }
 .brand-sub { font: 400 .6rem/1 var(--font-body); letter-spacing: .38em; text-transform: uppercase; margin-top: 7px; opacity: .75; }
 .nav { display: none; }
@@ -343,7 +347,7 @@ dialog.viewer .close { display: block; margin: 0 0 10px auto; color: #fff; borde
 .site-foot a { color: #fff; text-decoration: none; }
 .site-foot a:hover { color: var(--gold); }
 .foot-brand { text-align: center; margin-bottom: 54px; }
-.foot-brand .brand-name { color: #fff; font-size: 1.9rem; display: block; }
+.foot-logo { width: 140px; height: 140px; margin: 0 auto; border-radius: 50%; }
 .foot-brand .foot-script { display: block; font-family: "Tiro Kannada", serif; color: var(--gold); font-size: 1.5rem; margin-top: 12px; opacity: .8; }
 .foot-cols { display: grid; gap: 34px; text-align: center; padding: 40px 0; border-top: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); }
 @media (min-width: 760px) { .foot-cols { grid-template-columns: repeat(3, 1fr); } }
