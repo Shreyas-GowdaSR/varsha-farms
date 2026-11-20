@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Owner — Varsha Farms</title>
+<meta name="theme-color" content="#8a3a1d">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@700&family=Yatra+One&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/owner.css">
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/owner.js" defer></script>
+</head>
+<body data-page="owner" data-title="meta.owner" class="owner">
+<header class="site-head">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="logo" href="./">
+        <span class="logo-main" data-i18n="brand.name">Varsha Farms</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label">
+        <button type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="hi" lang="hi" aria-pressed="false">हिंदी</button>
+        <button type="button" data-set-lang="kn" lang="kn" aria-pressed="false">ಕನ್ನಡ</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap o-main">
+  <h1 class="painted o-title" data-i18n="o.title">Owner page</h1>
+
+  <!-- loading -->
+  <section id="scrLoading"><p data-i18n="o.loading">Loading…</p></section>
+
+  <!-- first-time setup (static hosting + GitHub) -->
+  <section id="scrSetup" hidden>
+    <h2 data-i18n="o.setupTitle">First-time setup</h2>
+    <p data-i18n="o.setupText">This connects the owner page to the GitHub repository that holds the website. Do this once.</p>
+    <form id="setupForm" class="o-form" autocomplete="off">
+      <label><span data-i18n="o.repo">GitHub repository (owner/name)</span>
+        <input name="repo" required placeholder="username/varsha-farms" autocapitalize="off" spellcheck="false"></label>
+      <label><span data-i18n="o.branch">Branch</span>
+        <input name="branch" required value="main" autocapitalize="off" spellcheck="false"></label>
+      <label><span data-i18n="o.token">GitHub access token</span>
+        <input name="token" required type="password" autocapitalize="off" spellcheck="false"></label>
+      <label><span data-i18n="o.newPassword">New owner password</span>
+        <input name="pw1" required type="password" minlength="8" autocomplete="new-password"></label>
+      <label><span data-i18n="o.repeatPassword">Repeat password</span>
+        <input name="pw2" required type="password" minlength="8" autocomplete="new-password"></label>
+      <p class="o-err" id="setupErr" role="alert"></p>
+      <button class="btn btn-soil" data-i18n="o.setupBtn">Save setup</button>
+    </form>
+  </section>
+
+  <!-- login -->
+  <section id="scrLogin" hidden>
+    <form id="loginForm" class="o-form o-login">
+      <label><span data-i18n="o.password">Password</span>
+        <input name="pw" type="password" required autocomplete="current-password"></label>
+      <p class="o-err" id="loginErr" role="alert"></p>
+      <button class="btn btn-soil" data-i18n="o.login">Open</button>
+    </form>
+  </section>
+
+  <!-- app -->
+  <section id="scrApp" hidden>
+    <nav class="o-tabs" role="tablist">
+      <button type="button" role="tab" data-tab="sheep" aria-selected="true" data-i18n="o.tabSheep">Sheep</button>
+      <button type="button" role="tab" data-tab="home" aria-selected="false" data-i18n="o.tabHome">Home photos</button>
+      <button type="button" role="tab" data-tab="settings" aria-selected="false" data-i18n="o.tabSettings">Settings</button>
+    </nav>
+
+    <div id="tab-sheep" class="o-panel">
+      <button type="button" class="btn btn-turmeric o-add" id="addSheep" data-i18n="o.add">Add a sheep</button>
+      <ul class="o-list" id="sheepList"></ul>
+    </div>
+
+    <div id="tab-home" class="o-panel" hidden>
+      <h2 data-i18n="o.heroTitle">Top banner</h2>
+      <p class="o-help" data-i18n="o.heroHelp">The big photo or video at the top of the home page.</p>
+      <div id="heroBox" class="o-hero"></div>
+      <label class="btn o-file"><span data-i18n="o.addMedia">Add photos / video</span>
+        <input type="file" id="heroFile" accept="image/*,video/mp4,video/webm,video/quicktime"></label>
+
+      <h2 data-i18n="o.galleryTitle">Gallery</h2>
+      <p class="o-help" data-i18n="o.galleryHelp">Photos and short videos shown on the home page, in this order.</p>
+      <ul class="o-media" id="galleryList"></ul>
+      <label class="btn o-file"><span data-i18n="o.addMedia">Add photos / video</span>
+        <input type="file" id="galleryFile" multiple accept="image/*,video/mp4,video/webm,video/quicktime"></label>
+      <div class="o-savebar"><button type="button" class="btn btn-soil" id="saveHome" disabled data-i18n="o.save">Save</button></div>
+    </div>
+
+    <div id="tab-settings" class="o-panel" hidden>
+      <p id="whereText"></p>
+      <form id="pwForm" class="o-form" hidden>
+        <h2 data-i18n="o.changePassword">Change password</h2>
+        <label><span data-i18n="o.newPassword">New owner password</span><input name="pw1" type="password" minlength="8" required autocomplete="new-password"></label>
+        <label><span data-i18n="o.repeatPassword">Repeat password</span><input name="pw2" type="password" minlength="8" required autocomplete="new-password"></label>
+        <p class="o-err" id="pwErr" role="alert"></p>
+        <button class="btn btn-soil" data-i18n="o.changePassword">Change password</button>
+      </form>
+      <p><button type="button" class="btn" id="logout" data-i18n="o.logout">Log out</button></p>
+    </div>
+  </section>
+
+  <!-- sheep editor -->
+  <dialog id="editor" class="o-editor">
+    <form id="sheepForm" class="o-form" method="dialog" novalidate>
+      <label><span data-i18n="o.id">Tag number (ID)</span>
+        <input name="tagId" required autocapitalize="characters" spellcheck="false" data-i18n-attr="placeholder:o.idHelp"></label>
+      <fieldset class="o-seg"><legend data-i18n="f.gender">Gender</legend>
+        <label><input type="radio" name="gender" value="ram"><span data-i18n="gender.ram">Ram (male)</span></label>
+        <label><input type="radio" name="gender" value="ewe"><span data-i18n="gender.ewe">Ewe (female)</span></label>
+      </fieldset>
+      <fieldset class="o-seg"><legend data-i18n="f.status">Status</legend>
+        <label><input type="radio" name="status" value="available"><span data-i18n="status.available">Available</span></label>
+        <label><input type="radio" name="status" value="booked"><span data-i18n="status.booked">Booked</span></label>
+        <label><input type="radio" name="status" value="sold"><span data-i18n="status.sold">Sold</span></label>
+      </fieldset>
+      <label><span data-i18n="f.breed">Breed</span>
+        <select name="breed"><option value="amingad" data-i18n="breed.amingad">Amingad (Yelaga)</option><option value="amingadCross" data-i18n="breed.amingadCross">Amingad cross</option></select></label>
+      <div class="o-two">
+        <label><span><span data-i18n="f.age">Age</span> · <span data-i18n="o.ageYears">Years</span></span><input name="ageY" type="number" inputmode="numeric" min="0" max="15"></label>
+        <label><span data-i18n="o.ageMonths">Months</span><input name="ageM" type="number" inputmode="numeric" min="0" max="11"></label>
+      </div>
+      <label><span data-i18n="f.teeth">Teeth</span>
+        <select name="teeth"><option value="">NA</option><option value="milk" data-i18n="teeth.milk">Milk teeth</option><option value="2" data-i18n="teeth.2">2 teeth</option><option value="4" data-i18n="teeth.4">4 teeth</option><option value="6" data-i18n="teeth.6">6 teeth</option><option value="8" data-i18n="teeth.8">Full mouth (8)</option></select></label>
+      <div class="o-two">
+        <label><span data-i18n="o.weightKg">Weight (kg)</span><input name="weightKg" type="number" inputmode="decimal" step="0.1" min="0"></label>
+        <label><span data-i18n="f.weighed">Weighed on</span>
+          <span class="o-date"><input name="weighedOn" type="date"><button type="button" class="linkish" id="today" data-i18n="o.today">Today</button></span></label>
+      </div>
+      <label><span data-i18n="o.priceRs">Price (₹)</span><input name="price" type="number" inputmode="numeric" min="0" step="100"></label>
+      <fieldset class="o-checks"><legend data-i18n="f.purpose">Purpose</legend>
+        <label><input type="checkbox" name="purpose" value="breeding"><span data-i18n="purpose.breeding">Breeding</span></label>
+        <label><input type="checkbox" name="purpose" value="meat"><span data-i18n="purpose.meat">Meat</span></label>
+        <label><input type="checkbox" name="purpose" value="festival"><span data-i18n="purpose.festival">Festival / Bakrid</span></label>
+        <label><input type="checkbox" name="purpose" value="rearing"><span data-i18n="purpose.rearing">Rearing</span></label>
+      </fieldset>
+      <label><span data-i18n="f.note">Note</span><textarea name="note" rows="2" maxlength="220" data-i18n-attr="placeholder:o.notePh"></textarea></label>
+
+      <h3 data-i18n="o.media">Photos and short video</h3>
+      <ul class="o-media" id="sheepMedia"></ul>
+      <label class="btn o-file"><span data-i18n="o.addMedia">Add photos / video</span>
+        <input type="file" id="sheepFile" multiple accept="image/*,video/mp4,video/webm,video/quicktime"></label>
+
+      <p class="o-err" id="sheepErr" role="alert"></p>
+      <div class="o-savebar">
+        <button type="button" class="btn" id="cancelEdit" data-i18n="o.cancel">Cancel</button>
+        <button type="submit" class="btn btn-soil" id="saveSheep" data-i18n="o.save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="o-toast" role="status" aria-live="polite" hidden></div>
+</main>
+</body>
+</html>

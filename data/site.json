@@ -1,0 +1,14 @@
+{
+  "name": "Varsha Farms",
+  "owner": "Raju S T",
+  "phones": [
+    { "tel": "+919535194801", "display": "+91 95351 94801", "whatsapp": true, "primary": true },
+    { "tel": "+919900948641", "display": "+91 99009 48641", "whatsapp": true }
+  ],
+  "map": {
+    "link": "https://maps.app.goo.gl/YwFfgwn1WgX5cCX76",
+    "lat": 12.7015264,
+    "lng": 77.4088071,
+    "zoom": 15
+  }
+}

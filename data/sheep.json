@@ -1,0 +1,53 @@
+{
+  "sheep": [
+    {
+      "id": "VF-001",
+      "breed": "amingad",
+      "gender": "ewe",
+      "ageMonths": 18,
+      "teeth": "2",
+      "weightKg": 34,
+      "weighedOn": "2026-11-15",
+      "price": 19500,
+      "purpose": ["breeding", "rearing"],
+      "status": "available",
+      "note": "Sample entry. Calm ewe, eats well. Replace or delete from the owner page.",
+      "media": [
+        { "type": "image", "src": "media/sheep/vf-001-a.webp", "thumb": "media/sheep/vf-001-a-sm.webp" }
+      ],
+      "added": "2026-11-15"
+    },
+    {
+      "id": "VF-002",
+      "breed": "amingad",
+      "gender": "ram",
+      "ageMonths": 11,
+      "teeth": "milk",
+      "weightKg": 29,
+      "weighedOn": "",
+      "price": 21000,
+      "purpose": ["festival", "meat"],
+      "status": "booked",
+      "note": "Sample entry. Growing well in the shed.",
+      "media": [
+        { "type": "image", "src": "media/sheep/vf-002-a.webp", "thumb": "media/sheep/vf-002-a-sm.webp" }
+      ],
+      "added": "2026-11-12"
+    },
+    {
+      "id": "VF-003",
+      "breed": "amingad",
+      "gender": "ram",
+      "ageMonths": 26,
+      "teeth": "4",
+      "weightKg": null,
+      "weighedOn": "",
+      "price": 32000,
+      "purpose": ["breeding"],
+      "status": "sold",
+      "note": "Sample entry without a photo.",
+      "media": [],
+      "added": "2026-11-01"
+    }
+  ]
+}

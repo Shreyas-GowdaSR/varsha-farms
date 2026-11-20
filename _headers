@@ -1,0 +1,7 @@
+# Netlify / Cloudflare Pages cache rules (ignored by GitHub Pages)
+/media/*
+  Cache-Control: public, max-age=604800
+/data/*
+  Cache-Control: no-cache
+/owner.html
+  X-Robots-Tag: noindex
