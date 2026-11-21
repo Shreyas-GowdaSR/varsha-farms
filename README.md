@@ -1,6 +1,6 @@
-# Varsha Aries website
+# VSSR Farms website
 
-Static website for Varsha Aries, Sontenahalli (near Bengaluru). Owner: Raju S T.
+Static website for VSSR Farms, Sontenahalli (near Bengaluru). Owner: Raju S T.
 Amingad (Yelaga) sheep, shed-raised.
 
 - Plain HTML, CSS and JavaScript. No framework and no build step.

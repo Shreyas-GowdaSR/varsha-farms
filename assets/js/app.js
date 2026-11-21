@@ -1,4 +1,4 @@
-/* Varsha Aries — public pages. Plain JS, no dependencies. */
+/* VSSR Farms — public pages. Plain JS, no dependencies. */
 (function () {
   'use strict';
 
@@ -99,7 +99,7 @@
 
   /* ---------- contacts ---------- */
   function primaryPhone() {
-    if (!site) return { tel: '+919535194801', display: '+91 95351 94801' };
+    if (!site) return { tel: '+919900948641', display: '+91 99009 48641' };
     return site.phones.filter(function (p) { return p.primary; })[0] || site.phones[0];
   }
   VF.waLink = function (text, phone) {
