@@ -80,3 +80,11 @@ dialog.o-editor::backdrop { background: rgba(18, 13, 9, .7); }
 
 .o-toast { position: fixed; left: 12px; right: 12px; bottom: 16px; z-index: 100; background: var(--ink); color: var(--paper); padding: 16px 18px; max-width: 520px; margin: 0 auto; border-left: 3px solid var(--gold); }
 .o-toast.is-error { border-left-color: var(--stamp-red); }
+
+/* In-page confirmation (replaces the browser's confirm() pop-up) */
+dialog.o-confirm { width: min(92vw, 420px); border: 0; padding: 26px 22px 20px; background: var(--paper); color: var(--ink); }
+dialog.o-confirm::backdrop { background: rgba(18, 13, 9, .7); }
+.o-confirm p { font: 400 1.35rem/1.35 var(--font-display); margin: 0 0 22px; }
+.o-confirm-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.o-confirm-btns .btn { min-height: 50px; padding: 12px 8px; }
+.o-confirm .btn-danger { background: var(--stamp-red); color: #fff; border-color: var(--stamp-red); }

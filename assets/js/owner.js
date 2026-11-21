@@ -132,8 +132,9 @@
           var dels = (deletes || []).map(function (p) { return { path: p, mode: '100644', type: 'blob', sha: null }; });
           return gh('/git/trees', { method: 'POST', body: { base_tree: baseTree, tree: entries.concat(dels) } })
             .catch(function (e) {
-              // a file we tried to delete may already be gone — retry without deletions
-              if (dels.length && e.status === 422) return gh('/git/trees', { method: 'POST', body: { base_tree: baseTree, tree: entries } });
+              // If GitHub refuses to remove old photo files (already gone, etc.), still save the
+              // change itself; leftover photos are harmless.
+              if (dels.length && e.status >= 400 && e.status < 500 && e.status !== 401 && e.status !== 403) return gh('/git/trees', { method: 'POST', body: { base_tree: baseTree, tree: entries } });
               throw e;
             });
         }).then(function (tree) {
@@ -321,8 +322,37 @@
     return save(files, deletes || [], message);
   }
 
+  // Our own confirmation box. The browser's confirm() pop-up is silently blocked in many
+  // phone browsers (WhatsApp in-app browser, home-screen shortcuts), which made Delete do nothing.
+  function askConfirm(message, okLabel) {
+    var d = $('#confirmDlg');
+    $('#confirmText').textContent = message;
+    $('#confirmOk').textContent = okLabel;
+    $('#confirmCancel').textContent = t('o.cancel');
+    return new Promise(function (resolve) {
+      function done(v) {
+        $('#confirmOk').removeEventListener('click', ok);
+        $('#confirmCancel').removeEventListener('click', cancel);
+        d.removeEventListener('cancel', cancel);
+        if (d.open) d.close();
+        resolve(v);
+      }
+      function ok() { done(true); }
+      function cancel(e) { if (e) e.preventDefault(); done(false); }
+      $('#confirmOk').addEventListener('click', ok);
+      $('#confirmCancel').addEventListener('click', cancel);
+      d.addEventListener('cancel', cancel);
+      d.showModal();
+      $('#confirmCancel').focus();
+    });
+  }
+
   function deleteSheep(s) {
-    if (!confirm(t('o.confirmDelete', { id: s.id }))) return;
+    askConfirm(t('o.confirmDelete', { id: s.id }), t('o.delete')).then(function (yes) {
+      if (yes) doDeleteSheep(s);
+    });
+  }
+  function doDeleteSheep(s) {
     var idx = sheep.indexOf(s);
     sheep.splice(idx, 1);
     var dels = unreferenced([].concat.apply([], (s.media || []).map(mediaPaths)));
